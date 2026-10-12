@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "722954620758",
+    "project_id": "pocketbook-2285a",
+    "storage_bucket": "pocketbook-2285a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722954620758:android:14d25cefaee6554dca10f7",
+        "android_client_info": {
+          "package_name": "com.example.mini_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALTAYnP5c1kJy5et7OuoC9-4U4Wip53gk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
