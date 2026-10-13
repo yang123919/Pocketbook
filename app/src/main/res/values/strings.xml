@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">mini_project</string>
+    <string name="login_title">Welcome back</string>
+    <string name="login_subtitle">Log in to see your spending</string>
+    <string name="register_title">Create account</string>
+    <string name="register_subtitle">Track every dollar in one place</string>
+    <string name="hint_name">Your name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm password</string>
+    <string name="action_login">Log in</string>
+    <string name="action_register">Create account</string>
+    <string name="go_register">New here? <b>Create an account</b></string>
+    <string name="go_login">Already have an account? <b>Log in</b></string>
+    <string name="nav_home">Home</string>
+    <string name="nav_activity">Activity</string>
+    <string name="nav_reports">Reports</string>
+    <string name="add_transaction">Add transaction</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
 </resources>
