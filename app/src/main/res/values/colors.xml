@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="navy">#FF14213D</color>
+    <color name="teal">#FF0F8B8D</color>
+    <color name="teal_soft">#FFD5EEEE</color>
+    <color name="teal_soft_half">#80D5EEEE</color>
+    <color name="mint">#FF3ED6C5</color>
+    <color name="bg">#FFF5F7FA</color>
+    <color name="border">#FFE3E8EF</color>
+    <color name="muted">#FF7A8699</color>
+    <color name="segment_bg">#FFE8ECF2</color>
+    <color name="expense">#FFD6334F</color>
+    <color name="income">#FF1E9E6A</color>
+    <color name="expense_on_dark">#FFFF7A90</color>
+    <color name="income_on_dark">#FF5EE6A8</color>
+    <color name="white_70">#B3FFFFFF</color>
+    <color name="white_15">#26FFFFFF</color>
+
+    <color name="food_chart">#FF0F8B8D</color>
+    <color name="bills_chart">#FFE8A317</color>
+    <color name="groceries_chart">#FFD63B5A</color>
+    <color name="transport_chart">#FF6C5CE7</color>
+    <color name="chart_other">#FFB8C0CC</color>
 </resources>

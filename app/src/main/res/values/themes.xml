@@ -1,9 +1,84 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Mini_project" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+    <style name="Base.Theme.Mini_project" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/teal</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/teal_soft</item>
+        <item name="colorOnSecondaryContainer">@color/teal</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/navy</item>
+        <item name="colorError">@color/expense</item>
+
+        <!-- Page background (#F5F7FA) -->
+        <item name="android:colorBackground">@color/bg</item>
+        <item name="android:windowBackground">@color/bg</item>
+
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 
     <style name="Theme.Mini_project" parent="Base.Theme.Mini_project" />
+
+    <!-- Text -->
+    <style name="Text.Title">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/navy</item>
+    </style>
+    <style name="Text.Section">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/navy</item>
+    </style>
+    <style name="Text.Body">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/navy</item>
+    </style>
+    <style name="Text.Muted">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/muted</item>
+    </style>
+    <style name="Text.Link">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/teal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">12dp</item>
+    </style>
+
+    <!-- White rounded card -->
+    <style name="Card">
+        <item name="android:background">@drawable/bg_card</item>
+    </style>
+
+    <!-- Inputs and buttons -->
+    <style name="Widget.Pocketbook.Input" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">@dimen/field_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/field_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/field_radius</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/field_radius</item>
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="boxStrokeColor">@color/teal</item>
+    </style>
+
+    <style name="Widget.Pocketbook.Button" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/teal</item>
+        <item name="cornerRadius">@dimen/field_radius</item>
+        <item name="android:minHeight">50dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.Pocketbook.Button.Danger" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:textColor">@color/expense</item>
+        <item name="strokeColor">@color/expense</item>
+        <item name="cornerRadius">@dimen/field_radius</item>
+        <item name="android:minHeight">50dp</item>
+    </style>
+
+    <style name="IconButton">
+        <item name="android:layout_width">36dp</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:background">@drawable/bg_circle_white</item>
+        <item name="android:padding">9dp</item>
+    </style>
 </resources>
