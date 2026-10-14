@@ -25,4 +25,36 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="balance_in">Balance in %1$s</string>
+    <string name="spent_amount">%1$s spent</string>
+    <string name="of_income">of %1$s income</string>
+    <string name="income">Income</string>
+    <string name="expenses">Expenses</string>
+    <string name="recent">Recent</string>
+    <string name="see_all">See all</string>
+    <string name="logout">Log out</string>
+    <string name="empty_transactions">No transactions yet.\nTap + to add your first one.</string>
+
+    <!-- Transactions -->
+    <string name="transactions">Transactions</string>
+    <string name="search_hint">Search by name or note</string>
+    <string name="filter_all">All</string>
+    <string name="filter_expenses">Expenses</string>
+    <string name="filter_income">Income</string>
+    <string name="sort">Change sort order</string>
+
+    <!-- Add / Edit -->
+    <string name="add_title">Add expense</string>
+    <string name="edit_title">Edit transaction</string>
+    <string name="amount">Amount</string>
+    <string name="category">Category</string>
+    <string name="type_expense">Expense</string>
+    <string name="type_income">Income</string>
+    <string name="date">Date</string>
+    <string name="paid_with">Paid with</string>
+    <string name="note">Note</string>
+    <string name="save">Save</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="close">Close</string>
 </resources>

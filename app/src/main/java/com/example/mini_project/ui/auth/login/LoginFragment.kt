@@ -1,32 +1,23 @@
 package com.example.mini_project.ui.auth.login
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.mini_project.R
-import com.example.mini_project.ui.auth.login.LoginViewModel
+import com.example.mini_project.base.BaseFragment
+import com.example.mini_project.databinding.FragmentLoginBinding
 
-class LoginFragment : Fragment() {
+class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
 
-    companion object {
-        fun newInstance() = LoginFragment()
-    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    private val viewModel: LoginViewModel by viewModels()
+        binding.authHeader.tvTitle.setText(R.string.login_title)
+        binding.authHeader.tvSubtitle.setText(R.string.login_subtitle)
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // TODO: Use the ViewModel
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        binding.tvSwitchMode.setOnClickListener {
+            findNavController().navigate(R.id.action_login_to_register)
+        }
+        // btnLogin and Firebase come in the next step
     }
 }

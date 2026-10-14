@@ -1,35 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
 
-    <fragment android:id="@+id/homeFragment"
-        android:name="com.example.mini_project.ui.home.HomeFragment" android:label="Home" />
-
-    <fragment android:id="@+id/transactionsFragment"
-        android:name="com.example.mini_project.ui.transactions.TransactionsFragment" android:label="Transactions" />
-
-    <fragment android:id="@+id/reportsFragment"
-        android:name="com.example.mini_project.ui.reports.ReportsFragment" android:label="Reports" />
-
-    <fragment android:id="@+id/editTransactionFragment"
-        android:name="com.example.mini_project.ui.edit.EditTransactionFragment" android:label="Add / Edit transaction">
-        <argument android:name="transactionId" android:defaultValue="@null"
-            app:argType="string" app:nullable="true" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.mini_project.ui.auth.login.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_register"
+            app:destination="@id/registerFragment" />
     </fragment>
 
-    <fragment android:id="@+id/loginFragment"
-        android:name="com.example.mini_project.ui.auth.login.LoginFragment" android:label="Login">
-        <action android:id="@+id/action_login_to_register" app:destination="@id/registerFragment" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.mini_project.ui.auth.register.RegisterFragment"
+        android:label="Register"
+        tools:layout="@layout/fragment_register" />
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.mini_project.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/transactionsFragment"
+        android:name="com.example.mini_project.ui.transactions.TransactionsFragment"
+        android:label="Transactions"
+        tools:layout="@layout/fragment_transactions" />
+
+    <fragment
+        android:id="@+id/reportsFragment"
+        android:name="com.example.mini_project.ui.reports.ReportsFragment"
+        android:label="Reports"
+        tools:layout="@layout/fragment_reports" />
+
+    <fragment
+        android:id="@+id/addTransactionFragment"
+        android:name="com.example.mini_project.ui.manage.add.AddTransactionFragment"
+        android:label="Add expense"
+        tools:layout="@layout/fragment_manage_transaction" />
+
+    <fragment
+        android:id="@+id/editTransactionFragment"
+        android:name="com.example.mini_project.ui.manage.edit.EditTransactionFragment"
+        android:label="Edit transaction"
+        tools:layout="@layout/fragment_manage_transaction">
+        <argument
+            android:name="transactionId"
+            app:argType="string" />
     </fragment>
 
-    <fragment android:id="@+id/registerFragment"
-        android:name="com.example.mini_project.ui.auth.register.RegisterFragment" android:label="Register" />
+    <action
+        android:id="@+id/action_global_home"
+        app:destination="@id/homeFragment"
+        app:popUpTo="@id/nav_graph"
+        app:popUpToInclusive="true" />
 
-    <action android:id="@+id/action_global_home" app:destination="@id/homeFragment"
-        app:popUpTo="@id/nav_graph" app:popUpToInclusive="true" />
-    <action android:id="@+id/action_global_login" app:destination="@id/loginFragment"
-        app:popUpTo="@id/nav_graph" app:popUpToInclusive="true" />
-    <action android:id="@+id/action_global_edit" app:destination="@id/editTransactionFragment" />
+    <action
+        android:id="@+id/action_global_login"
+        app:destination="@id/loginFragment"
+        app:popUpTo="@id/nav_graph"
+        app:popUpToInclusive="true" />
+
+    <action
+        android:id="@+id/action_global_add"
+        app:destination="@id/addTransactionFragment" />
+
+    <action
+        android:id="@+id/action_global_edit"
+        app:destination="@id/editTransactionFragment" />
 </navigation>

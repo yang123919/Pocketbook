@@ -1,32 +1,23 @@
 package com.example.mini_project.ui.auth.register
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.mini_project.R
-import com.example.mini_project.ui.auth.register.RegisterViewModel
+import com.example.mini_project.base.BaseFragment
+import com.example.mini_project.databinding.FragmentRegisterBinding
 
-class RegisterFragment : Fragment() {
+class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterBinding::inflate) {
 
-    companion object {
-        fun newInstance() = RegisterFragment()
-    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    private val viewModel: RegisterViewModel by viewModels()
+        binding.authHeader.tvTitle.setText(R.string.register_title)
+        binding.authHeader.tvSubtitle.setText(R.string.register_subtitle)
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // TODO: Use the ViewModel
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        return inflater.inflate(R.layout.fragment_register, container, false)
+        binding.tvSwitchMode.setOnClickListener {
+            findNavController().navigateUp()
+        }
+        // btnRegister and Firebase come in the next step
     }
 }
