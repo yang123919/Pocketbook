@@ -18,5 +18,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         binding.tvSeeAll.setOnClickListener {
             findNavController().navigate(R.id.transactionsFragment)
         }
+
+        binding.tvName.text = viewModel.userName
+        binding.tvAvatar.text = viewModel.userName.take(1).uppercase()
+
+        binding.tvAvatar.setOnClickListener {
+            viewModel.logout()
+            findNavController().navigate(R.id.action_global_login)
+        }
     }
 }
