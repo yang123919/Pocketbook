@@ -16,7 +16,7 @@
     <string name="nav_activity">Activity</string>
     <string name="nav_reports">Reports</string>
     <string name="add_transaction">Add transaction</string>
-    <!-- Strings related to login -->
+
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
@@ -35,7 +35,6 @@
     <string name="logout">Log out</string>
     <string name="empty_transactions">No transactions yet.\nTap + to add your first one.</string>
 
-    <!-- Transactions -->
     <string name="transactions">Transactions</string>
     <string name="search_hint">Search by name or note</string>
     <string name="filter_all">All</string>
@@ -43,7 +42,6 @@
     <string name="filter_income">Income</string>
     <string name="sort">Change sort order</string>
 
-    <!-- Add / Edit -->
     <string name="add_title">Add expense</string>
     <string name="edit_title">Edit transaction</string>
     <string name="amount">Amount</string>
@@ -57,4 +55,12 @@
     <string name="update">Update</string>
     <string name="delete">Delete</string>
     <string name="close">Close</string>
+
+    <string name="reports">Reports</string>
+    <string name="period_week">Week</string>
+    <string name="period_month">Month</string>
+    <string name="period_year">Year</string>
+    <string name="daily_spending">Daily spending, last 7 days</string>
+    <string name="no_expenses_period">No expenses in this period.</string>
+    <string name="spent">spent</string>
 </resources>
