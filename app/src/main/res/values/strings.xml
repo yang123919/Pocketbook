@@ -63,4 +63,8 @@
     <string name="daily_spending">Daily spending, last 7 days</string>
     <string name="no_expenses_period">No expenses in this period.</string>
     <string name="spent">spent</string>
+
+    <string name="cancel">Cancel</string>
+    <string name="delete_title">Delete this transaction?</string>
+    <string name="delete_message">This cannot be undone.</string>
 </resources>

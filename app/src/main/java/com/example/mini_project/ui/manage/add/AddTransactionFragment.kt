@@ -8,7 +8,7 @@ import com.example.mini_project.ui.manage.base.BaseManageTransactionFragment
 
 class AddTransactionFragment : BaseManageTransactionFragment() {
 
-    override val viewModel: AddTransactionViewModel by viewModels()
+    override val viewModel: AddTransactionViewModel by viewModels { AddTransactionViewModel.factory }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
