@@ -1,31 +1,42 @@
 package com.example.mini_project.ui.reports
 
-import androidx.fragment.app.viewModels
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.core.view.isVisible
+import androidx.fragment.app.viewModels
 import com.example.mini_project.R
+import com.example.mini_project.base.BaseFragment
+import com.example.mini_project.base.collectWhenStarted
+import com.example.mini_project.core.Format
+import com.example.mini_project.databinding.FragmentReportsBinding
+import com.example.mini_project.ui.adapter.LegendAdapter
 
-class ReportsFragment : Fragment() {
+class ReportsFragment : BaseFragment<FragmentReportsBinding>(FragmentReportsBinding::inflate) {
 
-    companion object {
-        fun newInstance() = ReportsFragment()
-    }
+    private val viewModel: ReportsViewModel by viewModels { ReportsViewModel.factory }
+    private lateinit var legendAdapter: LegendAdapter
 
-    private val viewModel: ReportsViewModel by viewModels()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        legendAdapter = LegendAdapter()
+        binding.rvLegend.adapter = legendAdapter
 
-        // TODO: Use the ViewModel
-    }
+        binding.togglePeriod.addOnButtonCheckedListener { _, checkedId, isChecked ->
+            if (!isChecked) return@addOnButtonCheckedListener
+            val period = when (checkedId) {
+                R.id.btnWeek -> Period.WEEK
+                R.id.btnYear -> Period.YEAR
+                else -> Period.MONTH
+            }
+            viewModel.setPeriod(period)
+        }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        return inflater.inflate(R.layout.fragment_reports, container, false)
+        collectWhenStarted(viewModel.report) { report ->
+            binding.donutChart.setData(report.slices, Format.money(report.total))
+            legendAdapter.submitList(report.slices)
+            binding.tvNoData.isVisible = report.slices.isEmpty()
+            binding.barChart.setData(report.dayLabels, report.dayTotals)
+        }
     }
 }

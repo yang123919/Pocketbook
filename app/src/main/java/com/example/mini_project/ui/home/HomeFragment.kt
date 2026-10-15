@@ -2,6 +2,7 @@ package com.example.mini_project.ui.home
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -12,6 +13,7 @@ import com.example.mini_project.base.openEditTransaction
 import com.example.mini_project.core.Format
 import com.example.mini_project.databinding.FragmentHomeBinding
 import com.example.mini_project.ui.adapter.TransactionAdapter
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
 
@@ -29,8 +31,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         binding.tvAvatar.text = viewModel.userName.take(1).uppercase()
 
         binding.tvAvatar.setOnClickListener {
-            viewModel.logout()
-            findNavController().navigate(R.id.action_global_login)
+            MaterialAlertDialogBuilder(requireContext())
+                .setTitle("Logout")
+                .setMessage("Are you sure you want to logout?")
+                .setNegativeButton("Cancel", null)
+                .setPositiveButton("Logout") { _, _ ->
+                    viewModel.logout()
+                    findNavController().navigate(R.id.action_global_login)
+                }
+                .show()
         }
 
         binding.tvSeeAll.setOnClickListener {
